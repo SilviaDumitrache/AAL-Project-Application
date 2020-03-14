@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Autentificare</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" placeholder="Email" [(ngModel)]="user.email"></ion-input>  
+      <!-- [(ngModule)]="user.email" -->
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Parola</ion-label>
+      <ion-input type="password" placeholder="Parola" [(ngModel)]="user.pw" ></ion-input>  
+      <!-- [(ngModule)]="user.parola" -->
+    </ion-item>
+
+    <ion-button expand="block" (click)="signIn()">Login</ion-button>
+
+  </ion-content>
