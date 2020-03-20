@@ -1,23 +1,32 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Autentificare</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="bg">
 
-<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+         <ion-card>
+           <ion-card-header>
+             <ion-card-title top center edge id = "tit">Autentificare</ion-card-title>
+           </ion-card-header>
+         
+          <ion-card-content >
+            <ion-item color="rosybrown">
+              <ion-input color="danger" type="email" text-center style="border:none" placeholder="Email" clearInput value="clear me" [(ngModel)]="user.email" ></ion-input> 
+            </ion-item>
+        
+            <ion-item color="rosybrown">
+              <ion-input color="danger" type="password" text-center style="border:none" placeholder="Parola" clearInput value="clear me" [(ngModel)]="user.pw"  ></ion-input> <br>  
+            </ion-item>
 
-    <ion-item>
-      <ion-label position="stacked">Email</ion-label>
-      <ion-input type="email" placeholder="Email" [(ngModel)]="user.email"></ion-input>  
-      <!-- [(ngModule)]="user.email" -->
-    </ion-item>
+            <ion-button expand="full"  (click)="signIn()">  
+             <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>Login</ion-button> 
+          
+            <ion-button expand="full" >Ai uitat parola?</ion-button>
+            <!-- fill="outline" -->
+          </ion-card-content>
+          </ion-card> 
+        </ion-col> 
+        </ion-row> 
+        </ion-grid>
+</ion-content>
 
-    <ion-item>
-      <ion-label position="stacked">Parola</ion-label>
-      <ion-input type="password" placeholder="Parola" [(ngModel)]="user.pw" ></ion-input>  
-      <!-- [(ngModule)]="user.parola" -->
-    </ion-item>
 
-    <ion-button expand="block" (click)="signIn()">Login</ion-button>
-
-  </ion-content>

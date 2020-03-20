@@ -1,0 +1,52 @@
+ion-content.bg{
+    --background:url('/assets/images/bg.jpg') 0 0/100% 100% no-repeat;
+    
+  }
+
+.content{
+    position: fixed;
+    // margin-top: 310px;
+    // margin-left: 40px;
+
+}  
+
+// ion-item.item1{
+//     background-color: rosybrown;
+//     border: rosybrown;
+// }
+
+ion-input{
+    color: rosybrown;
+    // background-color: seashell;
+    background-color: whitesmoke;
+    border: none;
+    font-size: small;
+    text-align: center;
+    
+}
+ 
+ion-card{
+    margin-top: 180px;
+    // background-color: lightslategray;
+    background-color: rosybrown;
+    box-shadow: none;
+    border: none;
+}
+
+ion-button{
+    --background:rosybrown;
+    border: pink;
+    color: seashell;
+    
+    
+}
+
+#tit{
+    font-weight: normal;
+    font-size:20px;
+    --color:  #fefffe;
+    --opacity: 75%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
