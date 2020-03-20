@@ -36,5 +36,12 @@ export class LoginPage implements OnInit {
      
     })
   }
+
+//funtia care ma duce pe pagina de resetare a parolei
+  goForogt(){
+    this.router.navigate(['forgot'])
+  }
+
+
 }
 //  am ramas al 10:05

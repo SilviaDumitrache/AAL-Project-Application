@@ -23,6 +23,10 @@ const routes: Routes = [
       role: 'PACIENT'
     }
     },
+  {
+    path: 'forgot',
+    loadChildren: () => import('./pages/forgot/forgot.module').then( m => m.ForgotPageModule)
+  },
 ];
 
 @NgModule({
