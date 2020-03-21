@@ -17,4 +17,8 @@ export class PacientDashboardPage implements OnInit {
     this.auth.signOut();
   }
 
+  chatBot(){
+    
+  }
+
 }

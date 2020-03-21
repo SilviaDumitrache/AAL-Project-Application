@@ -38,10 +38,13 @@ export class LoginPage implements OnInit {
   }
 
 //funtia care ma duce pe pagina de resetare a parolei
-  goForogt(){
+  goForgot(){
     this.router.navigate(['forgot'])
   }
 
+//functia care ma duce pe pagina de creare cont nou
+  goRegister(){
+
+  }  
 
 }
-//  am ramas al 10:05
