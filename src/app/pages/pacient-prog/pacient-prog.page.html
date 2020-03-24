@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="rosybrown">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()" > 
+        <ion-icon name="arrow-undo-sharp" class="back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Faceti o programare</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <ion-item class="dtPick" color="rosybrown">
+    <ion-label>Alegeti data</ion-label>
+    <ion-datetime placeholder="yyyy-mm-dd"
+                  
+                  displayFormat="YYYY MM DD"
+                  cancelText="Anuleaza"
+                  [min]=myDate
+                  
+                  color="rosybrown"
+                  ></ion-datetime>
+  </ion-item>
+
+  <ion-item class="dtPick" color="rosybrown">
+    <ion-label>Alegeti ora</ion-label>
+    <ion-datetime placeholder="hh mm"
+                  display-format="HH mm"
+                  min="08:00"
+                  max="16:00"
+                  color="rosybrown"
+    ></ion-datetime>
+  </ion-item>
+
+  <br>
+  <ion-button expand="full">Solicitati o programare</ion-button>
+  <br>
+  <ion-button expand="full">Lista programarilor</ion-button>
+
+  
+
+</ion-content>
+
+
+<!-- value="{{myDate | date: 'yyyy-MM-dd'}}" -->
+<!-- [(ngModel)]="myDate" -->
+
+<!-- [ngModel]="myDate.toISOString()" -->

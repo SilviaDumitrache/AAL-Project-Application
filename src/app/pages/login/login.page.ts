@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
 
 //funtia care ma duce pe pagina de resetare a parolei
   goForgot(){
-    this.router.navigate(['forgot'])
+    this.router.navigate(['pacient-prog'])
   }
 
 //functia care ma duce pe pagina de creare cont nou
