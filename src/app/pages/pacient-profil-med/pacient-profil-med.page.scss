@@ -1,0 +1,27 @@
+ion-content.bg{
+    --background:url('/assets/images/bg.jpg') 0 0/100% 100% no-repeat;
+    // --background-color: rosybrown;
+}
+
+ion-title{
+    text-align: center;
+    color: #ecd6d6;
+}
+
+ion-button{
+    --background:rosybrown;
+    border: pink;
+    color: seashell;
+}  
+
+ion-toolbar{
+    background-color: rosybrown;
+}
+
+ion-card{
+    // margin-top: 180px;
+    // background-color: lightslategray;
+    background-color: rosybrown;
+    box-shadow: none;
+    border: none;
+}

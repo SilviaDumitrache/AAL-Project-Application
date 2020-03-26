@@ -22,17 +22,35 @@
     <ion-row>
 
       <ion-col size="6" >
-        <ion-card text-center padding >
-          <ion-card-title>Profil</ion-card-title>
+        <ion-card text-center padding (click)="goProfil()">
+          <ion-card-title>Informatii personale</ion-card-title>
           <ion-card-content>
             <ion-icon name="person" class="icon1"></ion-icon>
           </ion-card-content>
         </ion-card>
       </ion-col>
 
+      <ion-col size="6" >
+        <ion-card text-center padding (click)="goProfilMed()">
+          <ion-card-title>Informatii medicale</ion-card-title>
+          <ion-card-content>
+            <ion-icon name="medical-sharp"  class="icon4"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card text-center padding >
+          <ion-card-title>Medicamentatie</ion-card-title>
+          <ion-card-content>
+            <ion-icon name="medkit" class="icon4"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
       <ion-col size="6">
         <ion-card text-center padding (click)="goProgramare()">
-          <ion-card-title>Programare</ion-card-title>
+          <ion-card-title>Programare </ion-card-title>
           <ion-card-content>
             <ion-icon name="calendar" class="icon2"></ion-icon>
           </ion-card-content>
@@ -41,7 +59,7 @@
 
       <ion-col size="6">
         <ion-card text-center padding >
-          <ion-card-title>Instrumente</ion-card-title>
+          <ion-card-title>SmartMed</ion-card-title>
           <ion-card-content>
             <ion-icon name="pulse" class="icon3"></ion-icon>
           </ion-card-content>
@@ -50,16 +68,18 @@
 
       <ion-col size="6">
         <ion-card text-center padding >
-          <ion-card-title>Medicamente</ion-card-title>
+          <ion-card-title>SmartHome</ion-card-title>
           <ion-card-content>
-            <ion-icon name="medkit" class="icon4"></ion-icon>
+            <ion-icon name="home-sharp" class="icon3"></ion-icon>
           </ion-card-content>
         </ion-card>
       </ion-col>
 
+      
+
       <ion-col >
       <ion-button expand="full" (click)="chatBot()">  
-        <ion-icon name="fitness-sharp" slot="start"></ion-icon>Health Bot</ion-button> 
+        <ion-icon name="fitness-sharp" slot="start"></ion-icon>Med-Chat</ion-button> 
       </ion-col>
       
     </ion-row>

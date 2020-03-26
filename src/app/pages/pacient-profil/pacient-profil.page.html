@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="rosybrown">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()" > 
+        <ion-icon name="arrow-undo-sharp" class="back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Informatii personale</ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content class="bg">
+  <ion-item color="transparent">
+  <ion-label >Nume: </ion-label>
+  <ion-input placeholder="Nume" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item color="transparent">
+  <ion-label>Prenume: </ion-label>
+  <ion-input placeholder="Prenume" type="text"></ion-input>
+  </ion-item>
+
+  <!-- class="dtPick" color="rosybrown" -->
+
+  <ion-item color="transparent">
+    <ion-label>Data nasterii: </ion-label>
+    <ion-datetime placeholder="yyyy-mm-dd"
+                  displayFormat="YYYY MM DD"
+                  
+                  ></ion-datetime>
+  </ion-item>
+
+  <ion-item color="transparent">
+    <ion-label>Varsta: </ion-label>
+    <ion-input placeholder="Ani" type="number"></ion-input>
+    </ion-item>
+
+  <!-- <ion-list>
+    <ion-list-header>Sex</ion-list-header>
+    <ion-item *ngFor="let sex of sexes">
+      <ion-label>{{sex.name}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="sex.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list> -->
+
+  <ion-item color="transparent">
+    <ion-label>Sex</ion-label>
+    <ion-select placeholder="Selectati sex" okText="Seteaza" cancelText="Anuleaza"> 
+      <ion-select-option value="f">Feminin</ion-select-option>
+      <ion-select-option value="m">Masculin</ion-select-option>
+    </ion-select>
+  </ion-item>
+    
+
+  <ion-item color="transparent">
+    <ion-label>Numar de telefon: </ion-label>
+    <ion-input type="number" placeholder="nr"></ion-input>
+    </ion-item>
+
+    <ion-item color="transparent">
+      <ion-label>Email: </ion-label>
+      <ion-input placeholder="email" type="email"></ion-input>
+      </ion-item>
+
+  <ion-item color="transparent">
+    <!-- <ion-label>Adresa</ion-label> -->
+    <ion-list color="transparent"> 
+      <ion-list-header>Adresa: </ion-list-header>
+      <ion-item ><ion-input placeholder="Judet" type="text"></ion-input></ion-item>
+      <ion-item ><ion-input placeholder="Locatitate" type="text"></ion-input></ion-item>
+      <ion-item ><ion-input placeholder="Strada" type="text"></ion-input></ion-item>
+      <ion-item ><ion-input placeholder="Numar" type="number"></ion-input></ion-item>
+    </ion-list>
+    </ion-item>
+
+  <!-- <ion-item>
+    <ion-label>Adresa</ion-label>
+    <ion-input placeholder="Adresa"></ion-input>
+    </ion-item>   -->
+
+
+</ion-content>

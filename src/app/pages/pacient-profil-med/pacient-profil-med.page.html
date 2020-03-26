@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar color="rosybrown">
+    <ion-buttons slot="start">
+      <ion-button (click)="back()" > 
+        <ion-icon name="arrow-undo-sharp" class="back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Informatii medicale</ion-title>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content class="bg">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="1">
+
+  <ion-card color="rosybrown">
+    <ion-card-header>
+    <ion-card-title>Antecedente hetero-colaterale</ion-card-title>
+  </ion-card-header>
+
+    <ion-card-content>
+    <ion-item color="rosybrown">
+    <ion-label position="stacked">Ce afectiuni medicale au avut parintii?</ion-label>
+    <ion-input clearInput  type="text"></ion-input>
+  </ion-item>
+
+  <ion-item color="rosybrown">
+    <ion-label position="stacked">Ce afectiuni medicale au avut fratii/surorile?</ion-label>
+    <ion-input clearInput type="text"></ion-input>
+  </ion-item>
+  </ion-card-content>
+  </ion-card>
+
+
+
+<ion-card color="rosybrown">
+  <ion-card-header>
+  <ion-card-title>Antecedente personale patologice</ion-card-title>
+</ion-card-header>
+
+  <ion-card-content>
+  <ion-item color="rosybrown">
+  <ion-label position="stacked">De ce afectiuni medicale suferiti?</ion-label>
+  <ion-input clearInput  type="text"></ion-input>
+</ion-item>
+
+<ion-item color="rosybrown">
+  <ion-label position="stacked">De cat timp?</ion-label>
+  <ion-input clearInput type="text"></ion-input>
+</ion-item>
+</ion-card-content>
+</ion-card>
+
+<ion-card color="rosybrown">
+  <ion-card-header>
+  <ion-card-title>Conditii de viata si de munca?</ion-card-title>
+</ion-card-header>
+
+  <ion-card-content>
+  <ion-item color="rosybrown">
+  <ion-label position="stacked">Ati lucrat in mediu toxic?</ion-label>
+  <!-- <ion-input clearInput  type="text"></ion-input> -->
+  <ion-select placeholder="Selectati raspunsul" okText="Seteaza" cancelText="Anuleaza"> 
+    <ion-select-option value="da">Da</ion-select-option>
+    <ion-select-option value="nu">Nu</ion-select-option>
+  </ion-select>
+</ion-item>
+
+</ion-card-content>
+</ion-card>
+
+<ion-card color="rosybrown">
+  <ion-card-header>
+  <ion-card-title>Comportament</ion-card-title>
+</ion-card-header>
+
+  <ion-card-content>
+  <ion-item color="rosybrown">
+  <ion-label position="stacked">Consum de alcol</ion-label>
+  <!-- <ion-input clearInput  type="text"></ion-input> -->
+  <ion-select placeholder="Selectati raspunsul" okText="Seteaza" cancelText="Anuleaza"> 
+    <ion-select-option value="da">Da</ion-select-option>
+    <ion-select-option value="nu">Nu</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<ion-item color="rosybrown">
+  <ion-label position="stacked">Consum de tutun</ion-label>
+  <!-- <ion-input clearInput  type="text"></ion-input> -->
+  <ion-select placeholder="Selectati raspunsul" okText="Seteaza" cancelText="Anuleaza"> 
+    <ion-select-option value="da">Da</ion-select-option>
+    <ion-select-option value="nu">Nu</ion-select-option>
+  </ion-select>
+</ion-item>
+
+</ion-card-content>
+</ion-card>
+
+<ion-card color="rosybrown">
+  <ion-card-header>
+  <ion-card-title>Alergii</ion-card-title>
+</ion-card-header>
+
+  <ion-card-content>
+  <ion-item color="rosybrown">
+  <ion-label position="stacked">Alergii alimentare</ion-label>
+  <ion-input clearInput  type="text"></ion-input>
+</ion-item>
+
+<ion-item color="rosybrown">
+  <ion-label position="stacked">Alergii medicamentoase</ion-label>
+  <ion-input clearInput type="text"></ion-input>
+</ion-item>
+</ion-card-content>
+</ion-card>
+
+
+</ion-col> 
+</ion-row> 
+</ion-grid>
+
+</ion-content>
