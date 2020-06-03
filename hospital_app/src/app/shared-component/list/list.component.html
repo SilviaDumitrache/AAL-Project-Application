@@ -1,0 +1,9 @@
+<div style="background-color: gainsboro;">
+    <div *ngFor="let item of listItems">
+      <ng-container *ngIf="item.adm === ModAdm">
+        <div>Name: {{ item.name }}</div>
+        <div>Age: {{ item.cantitate }}</div>
+        <hr />
+      </ng-container>
+    </div>
+ 

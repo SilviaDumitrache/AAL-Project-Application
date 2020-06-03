@@ -8,12 +8,19 @@ import { MedicamentePageRoutingModule } from './medicamente-routing.module';
 
 import { MedicamentePage } from './medicamente.page';
 
+import { SharedComponentsModule } from 'src/app/shared-component/shared-components.module';
+
+import { RouterModule } from "@angular/router";
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MedicamentePageRoutingModule
+    MedicamentePageRoutingModule,
+    SharedComponentsModule,
+    RouterModule
   ],
   declarations: [MedicamentePage]
 })
