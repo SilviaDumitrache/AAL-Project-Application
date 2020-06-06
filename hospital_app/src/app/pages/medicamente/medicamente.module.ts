@@ -11,7 +11,7 @@ import { MedicamentePage } from './medicamente.page';
 import { SharedComponentsModule } from 'src/app/shared-component/shared-components.module';
 
 import { RouterModule } from "@angular/router";
-
+import { ApiModule } from "src/app/api/api.module";
 
 @NgModule({
   imports: [
@@ -20,7 +20,8 @@ import { RouterModule } from "@angular/router";
     IonicModule,
     MedicamentePageRoutingModule,
     SharedComponentsModule,
-    RouterModule
+    RouterModule,
+    ApiModule
   ],
   declarations: [MedicamentePage]
 })

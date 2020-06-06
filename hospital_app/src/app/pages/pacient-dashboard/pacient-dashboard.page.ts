@@ -34,4 +34,8 @@ export class PacientDashboardPage implements OnInit {
     this.router.navigate(['pacient-profil-med']);
   }
 
+  goMed(){
+    this.router.navigate(['medicamente']);
+  }
+
 }
