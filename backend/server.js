@@ -8,6 +8,10 @@ const medRouter = require("./route/med.route");
 app.use("/", medRouter);
 app.use(cors());
 
+app.get('/', (Request, Response) => {
+    Response.render('index.ejs')
+})
+
 app.listen(3000, ()=> {
     console.log("listening on 3002");
   });
