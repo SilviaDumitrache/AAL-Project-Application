@@ -55,8 +55,8 @@ router.post('/login', (Request, Response) => {
                     type: "user",
                     data: {
                         _id: user._id,
-                        username:user.username,
                         name: user.name,
+                        username:user.username,
                         email: user.email,
                         contact: user.contact
                     }

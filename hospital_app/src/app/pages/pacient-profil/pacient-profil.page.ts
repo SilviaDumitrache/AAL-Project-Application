@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService, UserDetails } from 'src/app/service/authentication.service';
 
 @Component({
   selector: 'app-pacient-profil',
@@ -7,8 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./pacient-profil.page.scss'],
 })
 export class PacientProfilPage implements OnInit {
+  //contine detaliile utilizatorului logat
+  details: UserDetails
 
-  constructor(private router: Router) { }
+  constructor(private router: Router , 
+              private auth: AuthenticationService) { }
 
   //lista
   // sexes=[
@@ -17,6 +21,14 @@ export class PacientProfilPage implements OnInit {
   // ];
 
   ngOnInit() {
+    this.auth.profile().subscribe(
+      user => {
+        this.details = user
+      },
+      err => {
+        console.error(err)
+      }
+    )
   }
 
   back(){

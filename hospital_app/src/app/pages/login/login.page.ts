@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService, TokenPayload } from 'src/app/service/authentication.service';
 import { Router } from '@angular/router';
 
 
@@ -10,32 +10,37 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  user= {
-    email: '',
-    pw: ''
+  credentials : TokenPayload = {
+    id: 0,
+    name: '',
+    username:'',
+    email:'',
+    password:'',
+    contact:''    
   };
   
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthenticationService,
+              private router: Router) { }
 
   ngOnInit() {
   }
 
   // functia asta 'cheama' authentication service
-  signIn() {
-    this.auth.signIn(this.user).subscribe(user => {
-      console.log('dupa login', user);
+  // signIn() {
+  //   this.auth.signIn(this.user).subscribe(user => {
+  //     console.log('dupa login', user);
 
-      let role = user['role'];
+  //     let role = user['role'];
 
-      if (role == 'MEDIC') {
-        this.router.navigateByUrl('/medic-dashboard');
-      }
-      else if (role == 'PACIENT') {
-        this.router.navigateByUrl('/pacient-dashboard');
-      }
+  //     if (role == 'MEDIC') {
+  //       this.router.navigateByUrl('/medic-dashboard');
+  //     }
+  //     else if (role == 'PACIENT') {
+  //       this.router.navigateByUrl('/pacient-dashboard');
+  //     }
      
-    })
-  }
+  //   })
+  // }
 
 //funtia care ma duce pe pagina de resetare a parolei
   goForgot(){
@@ -46,5 +51,19 @@ export class LoginPage implements OnInit {
   goRegister(){
 
   }  
+
+  login(){
+    
+    this.auth.login(this.credentials).subscribe(
+      () => {
+        this.router.navigate(['pacient-dashboard']);
+      },
+      err => {
+        console.error(err)
+      }
+
+    )
+    
+  }
 
 }

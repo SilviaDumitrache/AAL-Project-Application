@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
+//import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
 })
 export class PacientDashboardPage implements OnInit {
 
-  constructor(private auth: AuthService, private router:Router) { }
+  constructor( private router:Router) { }
 
   ngOnInit() {
   }
 
-  signOut(){
-    this.auth.signOut();
-  }
+  // signOut(){
+  //   this.auth.signOut();
+  // }
 
   chatBot(){
     

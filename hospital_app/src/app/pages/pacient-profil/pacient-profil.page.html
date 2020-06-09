@@ -10,15 +10,15 @@
 </ion-header> 
 
 <ion-content class="bg">
-  <ion-item color="transparent">
+  <ion-item color="transparent" {{details?.nume}}>
   <ion-label >Nume: </ion-label>
-  <ion-input placeholder="Nume" type="text"></ion-input>
+  <!-- <ion-input placeholder="Nume" type="text"></ion-input> -->
   </ion-item>
 
-  <ion-item color="transparent">
+  <!-- <ion-item color="transparent">
   <ion-label>Prenume: </ion-label>
   <ion-input placeholder="Prenume" type="text"></ion-input>
-  </ion-item>
+  </ion-item> -->
 
   <!-- class="dtPick" color="rosybrown" -->
 
@@ -52,14 +52,14 @@
   </ion-item>
     
 
-  <ion-item color="transparent">
+  <ion-item color="transparent" {{details?.contact}}>
     <ion-label>Numar de telefon: </ion-label>
-    <ion-input type="number" placeholder="nr"></ion-input>
+    <!-- <ion-input type="number" placeholder="nr"></ion-input> -->
     </ion-item>
 
-    <ion-item color="transparent">
+    <ion-item color="transparent" {{details?.email}}>
       <ion-label>Email: </ion-label>
-      <ion-input placeholder="email" type="email"></ion-input>
+      <!-- <ion-input placeholder="email" type="email"></ion-input> -->
       </ion-item>
 
   <ion-item color="transparent">
