@@ -42,7 +42,11 @@ const routes: Routes = [
   {
     path: 'medicamente',
     loadChildren: () => import('./pages/medicamente/medicamente.module').then( m => m.MedicamentePageModule)
+  },  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
+
 ];
 
 @NgModule({

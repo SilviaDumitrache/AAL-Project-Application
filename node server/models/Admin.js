@@ -38,13 +38,13 @@ AdminSCH.plugin(uniqueValidator);
 
 const Admin = module.exports = mongoose.model('Admin', AdminSCH);
 
-//gaseste Adm dupa id
+//gaseste userul admin dupa id
 module.exports.getAdminById = function (id, callback){
     Admin.findById(id, callback);
 
 }
 
-//gaseste Adm dupa Admname
+//gaseste userul admin dupa username
 module.exports.getAdminByUsername = function (username, callback) {
     const query = {
         username: username
