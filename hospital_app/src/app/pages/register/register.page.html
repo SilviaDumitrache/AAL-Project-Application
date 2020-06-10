@@ -9,7 +9,9 @@
          <ion-card>
            <ion-card-header>
              <ion-card-title top center edge id = "tit">Inregistrare</ion-card-title>
-           </ion-card-header>
+             <br> 
+              <!-- <ion-card-subtitle center id="tit2">Completati campurile de mai jos</ion-card-subtitle> -->
+            </ion-card-header>
          
           <ion-card-content >
             <!-- name   -->
@@ -39,10 +41,11 @@
 
 
             <ion-button expand="full"  type="submit">  
-             <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>Register</ion-button> 
+             <ion-icon name="checkmark-outline" slot="end"></ion-icon>Register</ion-button> 
           
 
-            <!-- <ion-button expand="full" (click)="login()" >Deja utilizator?</ion-button> -->
+            <ion-button expand="full" routerLink="/" >
+              <ion-icon  name="chevron-forward-outline" slot="end"></ion-icon>Login</ion-button>
 
             <!-- <ion-button expand="full" (click)="goRegister()" >Creaza un cont</ion-button> -->
             

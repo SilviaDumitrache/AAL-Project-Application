@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, TokenPayload } from 'src/app/service/authentication.service';
 import { Router } from '@angular/router';
+// import { } from '@angular/allert'
 
 @Component({
   selector: 'app-register',
@@ -20,16 +21,17 @@ export class RegisterPage implements OnInit {
 
 
   constructor(private auth: AuthenticationService,
-              private router: Router) { }
+              private router: Router,
+              ) { }
 
   ngOnInit() {
   }
 
   register(){
-    this.auth.register(this.credentials).subscribe(
-      () => {
-        // this.router.navigateByUrl('/pacient-dashboard')
-        this.router.navigate(['pacient-dashboard']);
+    this.auth.register(this.credentials).subscribe( () => {
+            // this.flashMessage.show('Inregistrare cu success',{cssClass:'alert-success', timeout: 3000});
+            // this.router.navigateByUrl('/pacient-dashboard')
+             this.router.navigate(['login']);
       },
       err => {
         console.error(err)

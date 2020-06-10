@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router, Routes } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { Storage } from '@ionic/storage';
+import { filter } from 'rxjs/operators'; 
 
 export interface UserDetails {
   id: number
@@ -15,6 +17,7 @@ export interface UserDetails {
   exp: number
   iat: number
 }
+
 
 interface TokenResponse{
   token: string
@@ -36,16 +39,19 @@ export interface TokenPayload {
 
 export class AuthenticationService {
   private token: string
+  private authState = new BehaviorSubject(null);
 
-
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, 
+              private router: Router) { }
 
   //preia token-ul si il seteaza ca userToken
+  //token -> in local storage
   private saveToken (token: string): void {
     localStorage.setItem('userToken', token)
     this.token = token
   }
   
+  //luam token din local storage
   //verifica daca tokenul exista deja
   //daca deja exista, il preia pe cel existent din local storage
   private getToken() : string {
@@ -117,11 +123,11 @@ export class AuthenticationService {
     })
   }
 
-  //delogare user -> se elimina tokenul din local storage si ne intoarce la home page
+  //delogare user -> se elimina tokenul din local storage si ne intoarce la login page
   public logout(): void {
     this.token=''
     window.localStorage.removeItem('userToken')
-    this.router.navigateByUrl('/')
+    this.router.navigateByUrl('/login')
   }
 
 

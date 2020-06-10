@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, TokenPayload } from 'src/app/service/authentication.service';
 import { Router } from '@angular/router';
+// import { Token } from '@angular/compiler/src/ml_parser/lexer';
 
 
 @Component({
@@ -18,6 +19,11 @@ export class LoginPage implements OnInit {
     password:'',
     contact:''    
   };
+
+  // token : TokenResponse = {
+  //   token: string
+  // }
+
   
   constructor(private auth: AuthenticationService,
               private router: Router) { }
@@ -66,4 +72,7 @@ export class LoginPage implements OnInit {
     
   }
 
+  logout(){
+    this.auth.logout()
+  }
 }
