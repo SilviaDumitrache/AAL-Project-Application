@@ -6,7 +6,7 @@ import { AuthGuardService } from './service/auth-guard.service';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch : 'full' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule'},
-
+  // { path: 'pacient-dashboard',loadChildren: './pages/pacient-dashboard/pacient-dashboard.module#PacientDashboardPageModule' },
 
   // {
   //   path: 'medic-dashboard',
@@ -24,6 +24,10 @@ const routes: Routes = [
   //     role: 'PACIENT'
   //   }
   //   },
+  {
+    path: 'pacient-dashboard',
+    loadChildren: () => import('./pages/pacient-dashboard/pacient-dashboard.module').then( m => m.PacientDashboardPageModule)
+  },
   {
     path: 'forgot',
     loadChildren: () => import('./pages/forgot/forgot.module').then( m => m.ForgotPageModule)

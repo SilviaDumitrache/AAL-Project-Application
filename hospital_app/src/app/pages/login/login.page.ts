@@ -56,7 +56,7 @@ export class LoginPage implements OnInit {
     
     this.auth.login(this.credentials).subscribe(
       () => {
-        this.router.navigate(['pacient-dashboard']);
+        this.router.navigateByUrl('/pacient-dashboard')
       },
       err => {
         console.error(err)

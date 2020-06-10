@@ -35,7 +35,7 @@ export class PacientProgPage implements OnInit {
   
 
   back(){
-    this.router.navigate(['pacient-dashboard']);
+    this.router.navigate(['pacient-dashboard'])
   }
 
 }
