@@ -106,11 +106,12 @@ export class AuthenticationService {
     // '/api/users/login'
 
     const request = base.pipe(
-      map((data: TokenResponse) => {
+      map(( data: TokenResponse) => {
         if (data.token) {
           this.saveToken(data.token)
         }
         return data
+        
       })
     )
     return request
@@ -128,6 +129,7 @@ export class AuthenticationService {
     this.token=''
     window.localStorage.removeItem('userToken')
     this.router.navigateByUrl('/login')
+    
   }
 
 

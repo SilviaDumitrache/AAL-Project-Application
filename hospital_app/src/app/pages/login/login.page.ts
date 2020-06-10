@@ -65,14 +65,13 @@ export class LoginPage implements OnInit {
         this.router.navigateByUrl('/pacient-dashboard')
       },
       err => {
-        console.error(err)
+        console.error('Nu')
       }
 
     )
     
   }
 
-  logout(){
-    this.auth.logout()
-  }
+
+ 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 @Component({
   selector: 'app-pacient-dashboard',
@@ -9,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class PacientDashboardPage implements OnInit {
 
-  constructor( private router:Router) { }
+  constructor( private router:Router,
+                private auth: AuthenticationService)
+     { }
 
   ngOnInit() {
   }
@@ -36,6 +39,10 @@ export class PacientDashboardPage implements OnInit {
 
   goMed(){
     this.router.navigate(['medicamente']);
+  }
+
+  logout(){
+    this.auth.logout()
   }
 
 }
