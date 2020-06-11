@@ -36,6 +36,7 @@ export class PacientDashboardPage implements OnInit {
 
   chatBot(){
     
+    
   }
 
   goProgramare(){
