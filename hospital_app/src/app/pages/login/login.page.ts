@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService, TokenPayload } from 'src/app/service/authentication.service';
 import { Router } from '@angular/router';
 // import { Token } from '@angular/compiler/src/ml_parser/lexer';
-
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+
+  credForm: FormGroup;
 
   credentials : TokenPayload = {
     id: 0,
@@ -26,9 +28,24 @@ export class LoginPage implements OnInit {
 
   
   constructor(private auth: AuthenticationService,
-              private router: Router) { }
+              private router: Router,
+              private readonly formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.credForm = this.formBuilder.group ({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    
+    });
+  }
+
+  validation_mess={
+    'username': [
+      { type: 'required', message: 'Introduceti username!'}
+    ],
+    'password': [
+      { type: 'required', message: 'Introduceti parola!'}
+    ]
   }
 
   // functia asta 'cheama' authentication service
@@ -52,25 +69,23 @@ export class LoginPage implements OnInit {
   goForgot(){
     this.router.navigate(['pacient-prog'])
   }
+ 
+  onSubmit(){
 
-//functia care ma duce pe pagina de creare cont nou
-  goRegister(){
-
-  }  
-
-  login(){
+//  login(){
     
-    this.auth.login(this.credentials).subscribe(
+    this.auth.login(this.credForm.value).subscribe(
       () => {
         this.router.navigateByUrl('/pacient-dashboard')
       },
       err => {
-        console.error('Nu')
+        console.error('Nu s-a facut login')
       }
 
     )
     
-  }
+  //}
+}  
 
 
  

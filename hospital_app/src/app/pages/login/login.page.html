@@ -1,6 +1,8 @@
 <ion-content class="bg">
-  
- 
+  <form (submit)="onSubmit()">
+    <!-- [formGroup]="credForm" -->
+    
+
     <ion-grid>
     <ion-row>
       <ion-col size-md="6" offset-md="3">
@@ -12,23 +14,47 @@
            <ion-card-header >
              <!-- <ion-card-title id="tit">  -->
              <!-- top center edge id = "tit">Autentificare -->
-              <ion-card-title  id="tit" class="underlineHover" >Login</ion-card-title>
+              <ion-card-title  id="tit" >Logare</ion-card-title>
               <!-- <ion-card-title class="underlineHover" routerLink="/register" routerLinkActive="active">Register</ion-card-title> -->
              <!-- </ion-card-title> -->
              <br>
            </ion-card-header>
          
           <ion-card-content >
-            <form (submit)="login()">
+  
+              <!-- <form (submit)="login()"> -->
 
+                 
+                <!-- [(ngModel)]="credentials.username" [ngModelOptions] ="{standalone:true}"     -->
+              <div [formGroup]="credForm">
+                <ion-item color="rosybrown">
+                  <ion-input color="danger" type="text" text-center style="border:none" placeholder="Username" clearInput
+                    formControlName="username"></ion-input>
+                </ion-item>
+              </div>
 
-            <ion-item color="rosybrown">
-              <ion-input color="danger" type="email" text-center style="border:none" placeholder="Username" clearInput value="clear me" [(ngModel)]="credentials.username" [ngModelOptions] ="{standalone:true}"></ion-input> 
-            </ion-item>
+              <div class="validation-err">
+                <ng-container *ngFor ="let validation of validation_mess.username">
+                  <div class="error-message" *ngIf="credForm.get('username').hasError(validation.type) && (credForm.get('username').dirty || credForm.get('username').touched)">
+                    {{ validation.message }}
+                  </div>
+                </ng-container>
+              </div>
+                
         
+            <div  [formGroup]="credForm">
             <ion-item color="rosybrown">
-              <ion-input color="danger" type="password" text-center style="border:none" placeholder="Parola" clearInput value="clear me" [(ngModel)]="credentials.password"  [ngModelOptions] ="{standalone:true}"></ion-input> <br>  
+              <ion-input color="danger" type="password" text-center style="border:none" placeholder="Parola" clearInput formControlName="password"></ion-input> <br>  
             </ion-item>
+            </div>  
+
+            <div class="validation-err">
+              <ng-container *ngFor ="let validation of validation_mess.password">
+                <div class="error-message" *ngIf="credForm.get('password').hasError(validation.type) && (credForm.get('password').dirty || credForm.get('password').touched)">
+                  {{ validation.message }}
+                </div>
+              </ng-container>
+            </div>
 
             <ion-button expand="full"  type="submit">  
              <ion-icon slot="end"  name="chevron-forward-outline" ></ion-icon>Login</ion-button> 
@@ -41,7 +67,7 @@
 
 
            
-          </form>
+         
           </ion-card-content>
           
         
@@ -51,6 +77,7 @@
         </ion-row> 
         </ion-grid>
         
+      </form>
 </ion-content>
 
 

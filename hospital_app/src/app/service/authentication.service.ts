@@ -6,6 +6,7 @@ import { Router, Routes } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Storage } from '@ionic/storage';
 import { filter } from 'rxjs/operators'; 
+import { AlertController } from '@ionic/angular';
 
 
 export interface UserDetails {
@@ -44,6 +45,7 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient, 
               private router: Router,
+              private alertCtrl: AlertController
             ) { }
 
   //preia token-ul si il seteaza ca userToken
@@ -52,6 +54,9 @@ export class AuthenticationService {
     localStorage.setItem('userToken', token)
     this.token = token
   }
+
+
+
   
   //luam token din local storage
   //verifica daca tokenul exista deja
@@ -134,6 +139,14 @@ export class AuthenticationService {
     
   }
 
+  showAlert(msg) {
+    let alert = this.alertCtrl.create({
+      message: msg,
+      header: 'Eroare!',
+      buttons: ['Ok']
 
+    });
+    alert.then(alert => alert.present());
+  }
 
 }
