@@ -48,19 +48,24 @@ export class LoginPage implements OnInit {
   //   })
   // }
 
-// //funtia care ma duce pe pagina de resetare a parolei
-//   goForgot(){
-//     this.router.navigate(['pacient-prog'])
-//   }
+//funtia care ma duce pe pagina de resetare a parolei
+  goForgot(){
+    this.router.navigate(['pacient-prog'])
+  }
+
+//functia care ma duce pe pagina de creare cont nou
+  goRegister(){
+
+  }  
 
   login(){
     
-    this.auth.login(this.credentials).subscribe( credentials => {
-      this.router.navigateByUrl('/pacient-dashboard')
-      console.log('dupa login', credentials) //tokenul in consola
+    this.auth.login(this.credentials).subscribe(
+      () => {
+        this.router.navigateByUrl('/pacient-dashboard')
       },
       err => {
-        
+        console.error('Nu')
       }
 
     )

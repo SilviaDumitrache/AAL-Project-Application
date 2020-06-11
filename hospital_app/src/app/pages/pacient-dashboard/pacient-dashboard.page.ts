@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
-import { AuthenticationService, TokenPayload } from 'src/app/service/authentication.service';
-import { Storage } from '@ionic/storage';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 @Component({
   selector: 'app-pacient-dashboard',
@@ -10,18 +9,6 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['./pacient-dashboard.page.scss'],
 })
 export class PacientDashboardPage implements OnInit {
-
-  token =""
-
-  credentials : TokenPayload = {
-    id: 0,
-    name: '',
-    username:'',
-    email:'',
-    password:'',
-    contact:''    
-  };
-
 
   constructor( private router:Router,
                 private auth: AuthenticationService)
@@ -55,7 +42,8 @@ export class PacientDashboardPage implements OnInit {
     this.router.navigate(['medicamente']);
   }
 
- logout() {
-   
- }
+  logout(){
+    this.auth.logout()
+  }
+
 }

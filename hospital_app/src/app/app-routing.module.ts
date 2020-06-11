@@ -26,8 +26,7 @@ const routes: Routes = [
   //   },
   {
     path: 'pacient-dashboard',
-    loadChildren: () => import('./pages/pacient-dashboard/pacient-dashboard.module').then( m => m.PacientDashboardPageModule),
-    canActivate: [AuthGuardService]
+    loadChildren: () => import('./pages/pacient-dashboard/pacient-dashboard.module').then( m => m.PacientDashboardPageModule)
   },
   {
     path: 'forgot',
