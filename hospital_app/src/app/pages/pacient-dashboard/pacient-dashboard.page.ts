@@ -21,10 +21,7 @@ export class PacientDashboardPage implements OnInit {
   //   this.auth.signOut();
   // }
 
-  chatBot(){
-    
-    
-  }
+ 
 
   goProgramare(){
     this.router.navigate(['pacient-prog']);
@@ -43,7 +40,7 @@ export class PacientDashboardPage implements OnInit {
   }
 
   logout(){
-    this.auth.logout()
+    this.auth.logout();
   }
 
 }

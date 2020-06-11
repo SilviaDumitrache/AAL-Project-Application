@@ -39,7 +39,7 @@ export interface TokenPayload {
 
 export class AuthenticationService {
   private token: string
-  private authState = new BehaviorSubject(null);
+  // private authState = new BehaviorSubject(null);
 
   constructor(private http: HttpClient, 
               private router: Router) { }

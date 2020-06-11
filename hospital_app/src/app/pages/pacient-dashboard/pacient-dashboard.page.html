@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar color="rosybrown">
     <ion-buttons slot="start">
-      <ion-button  > 
-        <ion-icon name="arrow-undo-sharp" class="back" (click)="logout()"></ion-icon>
-      </ion-button>
+      <!-- <ion-button  > 
+        <ion-icon name="arrow-undo-sharp" class="back" type="submit"></ion-icon>
+      </ion-button> -->
     </ion-buttons>
 
     <ion-title>Pacient Dashboard</ion-title>
@@ -17,6 +17,7 @@
 
 
 <ion-content class="bg"> 
+<form (submit)="logout()">
 
   <ion-grid>
     <ion-row>
@@ -78,10 +79,12 @@
       
 
       <ion-col >
-      <ion-button expand="full" (click)="chatBot()">  
-        <ion-icon name="fitness-sharp" slot="start"></ion-icon>Med-Chat</ion-button> 
+      <ion-button expand="full" type="submit">  Logout </ion-button> 
+        <!-- <ion-icon name="fitness-sharp" slot="start"></ion-icon>Med-Chat</ion-button>  -->
       </ion-col>
       
     </ion-row>
   </ion-grid>
+
+</form>
 </ion-content>
