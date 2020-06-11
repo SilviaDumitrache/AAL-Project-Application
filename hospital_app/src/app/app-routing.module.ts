@@ -26,15 +26,18 @@ const routes: Routes = [
   //   },
   {
     path: 'pacient-dashboard',
-    loadChildren: () => import('./pages/pacient-dashboard/pacient-dashboard.module').then( m => m.PacientDashboardPageModule)
+    loadChildren: () => import('./pages/pacient-dashboard/pacient-dashboard.module').then( m => m.PacientDashboardPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'forgot',
-    loadChildren: () => import('./pages/forgot/forgot.module').then( m => m.ForgotPageModule)
+    loadChildren: () => import('./pages/forgot/forgot.module').then( m => m.ForgotPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'pacient-prog',
-    loadChildren: () => import('./pages/pacient-prog/pacient-prog.module').then( m => m.PacientProgPageModule)
+    loadChildren: () => import('./pages/pacient-prog/pacient-prog.module').then( m => m.PacientProgPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'pacient-profil',
@@ -43,11 +46,13 @@ const routes: Routes = [
   },
   {
     path: 'pacient-profil-med',
-    loadChildren: () => import('./pages/pacient-profil-med/pacient-profil-med.module').then( m => m.PacientProfilMedPageModule)
+    loadChildren: () => import('./pages/pacient-profil-med/pacient-profil-med.module').then( m => m.PacientProfilMedPageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'medicamente',
-    loadChildren: () => import('./pages/medicamente/medicamente.module').then( m => m.MedicamentePageModule)
+    loadChildren: () => import('./pages/medicamente/medicamente.module').then( m => m.MedicamentePageModule),
+    canActivate: [AuthGuardService]
   },
   {
     path: 'register',

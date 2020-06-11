@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { Storage } from '@ionic/storage';
 import { filter } from 'rxjs/operators'; 
 
+
 export interface UserDetails {
   id: number
   name: string
@@ -42,7 +43,8 @@ export class AuthenticationService {
   // private authState = new BehaviorSubject(null);
 
   constructor(private http: HttpClient, 
-              private router: Router) { }
+              private router: Router,
+            ) { }
 
   //preia token-ul si il seteaza ca userToken
   //token -> in local storage
@@ -103,7 +105,7 @@ export class AuthenticationService {
   //login user
   public login( user: TokenPayload) : Observable<any> {
     const base = this.http.post(`${environment.apiUrl}/users/login`, user)
-    // '/api/users/login'
+  
 
     const request = base.pipe(
       map(( data: TokenResponse) => {
@@ -120,7 +122,7 @@ export class AuthenticationService {
   //user profile
   public profile(): Observable<any> {
     return this.http.get(`${environment.apiUrl}/api/users/profile`, {
-      headers: { Authorzization: `${this.getToken()}`}
+      headers: { Authorization: `${this.getToken()}`}
     })
   }
 
