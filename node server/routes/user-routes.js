@@ -70,7 +70,7 @@ router.post('/login', (Request, Response) => {
                 });
             } else {
                 return Response.json({
-                    success: true,
+                    success: false,
                     message: "Parola gresita!"
                 });
             }

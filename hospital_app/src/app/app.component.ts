@@ -16,11 +16,12 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public auth: AuthenticationService
+    private auth: AuthenticationService
   ) {
     this.initializeApp();
   }
 
+  //mai sus era public la auth
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
