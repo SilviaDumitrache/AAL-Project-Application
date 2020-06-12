@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { Storage } from '@ionic/storage';
 import { filter } from 'rxjs/operators'; 
 import { AlertController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 
 export interface UserDetails {
@@ -45,7 +46,8 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient, 
               private router: Router,
-              private alertCtrl: AlertController
+              private alertCtrl: AlertController,
+              private toastCtrl: ToastController
             ) { }
 
   //preia token-ul si il seteaza ca userToken
@@ -116,11 +118,16 @@ export class AuthenticationService {
       map(( data: TokenResponse) => {
         if (data.token) {
           this.saveToken(data.token)
+        } else {
+          this.showToastAlert('Username-ul si parola nu se potrivesc.')
         }
         return data
         
-      })
+      } 
+      )
     )
+
+    // this.showToastAlert('Completati toate campurile si reincercati.');
     return request
   }
 
@@ -147,6 +154,15 @@ export class AuthenticationService {
 
     });
     alert.then(alert => alert.present());
+  }
+
+  async showToastAlert(msg){
+    const toast = await this.toastCtrl.create({
+      message: msg,
+      duration: 1000,
+      position: "middle"
+    });
+    toast.present();
   }
 
 }

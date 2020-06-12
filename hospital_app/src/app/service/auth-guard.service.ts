@@ -15,8 +15,8 @@ export class AuthGuardService implements CanActivate {
   //verifica daca un user poate merge pe o pagina (ruta)
   canActivate() {
     if(!this.auth.isLoggedIn()) {
-      console.log('neautorizat')
-      this.showAlert('Nu sunteti autorizat pe aceasta pagina')
+      console.log('Neautorizat. Logare mai intai')
+      // this.showAlert('Nu sunteti autorizat pe aceasta pagina')
       this.router.navigateByUrl('/')
       return false
 
