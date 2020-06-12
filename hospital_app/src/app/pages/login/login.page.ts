@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 // import { Token } from '@angular/compiler/src/ml_parser/lexer';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -22,14 +23,12 @@ export class LoginPage implements OnInit {
     contact:''    
   };
 
-  // token : TokenResponse = {
-  //   token: string
-  // }
 
   
   constructor(private auth: AuthenticationService,
               private router: Router,
-              private readonly formBuilder: FormBuilder) { }
+              private readonly formBuilder: FormBuilder
+            ) { }
 
   ngOnInit() {
     this.credForm = this.formBuilder.group ({
@@ -87,6 +86,11 @@ export class LoginPage implements OnInit {
   //}
 }  
 
-
+register(){
+  this.router.navigateByUrl('/register')
+  // this.auth.register(this.credentials).subscribe(res => {
+  //   this.auth.login(this.credForm.value).subscribe()
+  // });
+}
  
 }

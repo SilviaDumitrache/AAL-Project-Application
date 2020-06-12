@@ -42,7 +42,7 @@ export interface TokenPayload {
 
 export class AuthenticationService {
   private token: string
-  // private authState = new BehaviorSubject(null);
+  // public authState = new BehaviorSubject(null);
 
   constructor(private http: HttpClient, 
               private router: Router,
@@ -102,10 +102,12 @@ export class AuthenticationService {
       map( (data: TokenResponse) => {
         if (data.token) {
           this.saveToken(data.token)
-        }
+          // this.showAlert('Inregistrare cu success!')
+        } 
         return data
       })
     )
+    
     return request
   }
 
@@ -149,7 +151,7 @@ export class AuthenticationService {
   showAlert(msg) {
     let alert = this.alertCtrl.create({
       message: msg,
-      header: 'Eroare!',
+      header: 'Info',
       buttons: ['Ok']
 
     });

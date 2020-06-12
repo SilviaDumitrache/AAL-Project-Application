@@ -56,10 +56,10 @@
               </ng-container>
             </div>
 
-            <ion-button expand="full"  type="submit">  
+            <ion-button expand="full"  type="submit" [disabled]="!credForm.valid">  
              <ion-icon slot="end"  name="chevron-forward-outline" ></ion-icon>Login</ion-button> 
           
-            <ion-button expand="full" routerLink="/register">
+            <ion-button expand="full" (click)="register()" >
               <ion-icon name="chevron-back-outline" slot="start"></ion-icon>
                         Register</ion-button>    
 
