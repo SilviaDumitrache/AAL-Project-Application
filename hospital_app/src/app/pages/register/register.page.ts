@@ -91,7 +91,7 @@ export class RegisterPage implements OnInit {
       { type: 'required', message: 'Introduceti parola.'},
       { type: 'minlength', message: 'Introduceti cel putin 5 caractere.' },
       { type: 'maxlength', message: 'Introduceti cel mult 25 de caractere.' },
-      { type: 'pattern', message: 'Introduceti o combinatie de litere si cifre' }
+      { type: 'pattern', message: 'Introduceti o combinatie de litere mari, mici si cifre' }
     ],
     'contact': [
       { type: 'required', message: 'Introduceti nr. de telefon!'},
