@@ -92,5 +92,9 @@ register(){
   //   this.auth.login(this.credForm.value).subscribe()
   // });
 }
- 
+
+logMed(){
+  this.router.navigateByUrl('/login-med')
+}
+
 }

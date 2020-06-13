@@ -14,11 +14,11 @@ const UserSCH = mongoose.Schema({
         unique: true,
         index: true
     },
-    role: {
-        type: String,
-        default: "user",
-        enum: ["medic", "admin"]
-    },
+    // role: {
+    //     type: String,
+    //     default: "user",
+    //     enum: ["medic", "admin"]
+    // },
     username: {
         type: String,
         required: true,
