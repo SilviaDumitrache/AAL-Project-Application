@@ -14,14 +14,6 @@ const UserSCH = mongoose.Schema({
         unique: true,
         index: true
     },
-<<<<<<< HEAD
-=======
-    role: {
-        type: String,
-        default: "user",
-        enum: ["medic", "admin"]
-    },
->>>>>>> parent of 0a3678e... design of medical login
     username: {
         type: String,
         required: true,

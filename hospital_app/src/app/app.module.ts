@@ -17,7 +17,7 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { ChatModule } from './chat/chat.module';
+
 
 import { AuthGuardService } from './service/auth-guard.service';
 import { AuthenticationService } from './service/authentication.service';
@@ -27,7 +27,6 @@ import { AuthenticationService } from './service/authentication.service';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
   IonicStorageModule.forRoot(),
-  ChatModule,
   FormsModule,
   ReactiveFormsModule,
   HttpClientModule,
