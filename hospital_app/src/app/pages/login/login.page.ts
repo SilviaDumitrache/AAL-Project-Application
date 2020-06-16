@@ -94,4 +94,8 @@ register(){
   // });
 }
  
+logMed(){
+  this.router.navigateByUrl('/login-med')
+}
+
 }
