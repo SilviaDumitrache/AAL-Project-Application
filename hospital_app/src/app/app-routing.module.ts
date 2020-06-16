@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 //import { AuthGuard } from './guards/auth.guard';
 import { AuthGuardService } from './service/auth-guard.service';
+import { AuthForAdminService } from './service/auth-for-admin.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch : 'full' },
@@ -57,9 +58,15 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
-  },  {
+  },
+  {
     path: 'login-med',
     loadChildren: () => import('./pages/login-med/login-med.module').then( m => m.LoginMedPageModule)
+  },
+  {
+    path: 'medic-dashboard',
+    loadChildren: () => import('./pages/medic-dashboard/medic-dashboard.module').then( m => m.MedicDashboardPageModule),
+    canActivate: [AuthForAdminService]
   },
 
 

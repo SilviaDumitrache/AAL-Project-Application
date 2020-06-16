@@ -1,4 +1,6 @@
 <ion-content class="bg">
+  <form (submit)="onSubmit()">
+
   <ion-grid>
     <ion-row>
       <ion-col size-md="6" offset-md="3">
@@ -10,19 +12,44 @@
           </ion-card-header>
 
           <ion-card-content>
-            <ion-item color="rosybrown">
-              <ion-input color="danger" type="text" text-center style="border:none" placeholder="Username" clearInput ></ion-input>
-            </ion-item>
 
+            <div [formGroup]="credForm">
             <ion-item color="rosybrown">
-              <ion-input color="danger" type="text" text-center style="border:none" placeholder="Parola" clearInput></ion-input>
+              <ion-input color="danger" type="text" text-center style="border:none" placeholder="Username" clearInput 
+              formControlName="username" ></ion-input>
             </ion-item>
+          </div>
 
-            <ion-button class="but" expand="full" >
+          <div class="validation-err">
+            <ng-container *ngFor ="let validation of validation_mess.username">
+              <div class="error-message" *ngIf="credForm.get('username').hasError(validation.type) && (credForm.get('username').dirty || credForm.get('username').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+            <div  [formGroup]="credForm">
+            <ion-item color="rosybrown">
+              <ion-input color="danger" type="password" text-center style="border:none" placeholder="Parola" clearInput
+              formControlName="password"></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="validation-err">
+            <ng-container *ngFor ="let validation of validation_mess.password">
+              <div class="error-message" *ngIf="credForm.get('password').hasError(validation.type) && (credForm.get('password').dirty || credForm.get('password').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+            <ion-button class="but" expand="full" type="submit" [disabled]="!credForm.valid">
               <ion-icon slot="end"  name="chevron-forward-outline"></ion-icon>
                 Login</ion-button>
 
-          </ion-card-content>
+         
+        
+         </ion-card-content>
         </ion-card>
 
         <ion-button class="med" expand="full" fill="clear" (click)="log()">Sunteti pacient?</ion-button> 
@@ -30,4 +57,6 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  </form>
 </ion-content>

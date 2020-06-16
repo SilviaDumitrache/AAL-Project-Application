@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//import { AuthService } from 'src/app/services/auth.service';
+import {  AuthenticationService } from 'src/app/service/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-medic-dashboard',
@@ -8,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedicDashboardPage implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthenticationService,
+              private router: Router) {}
 
   ngOnInit() {
   }
@@ -16,5 +18,9 @@ export class MedicDashboardPage implements OnInit {
   // signOut(){
   //   this.auth.signOut();
   // }
+
+  logout(){
+    this.auth.logoutMed();
+  }
 
 }

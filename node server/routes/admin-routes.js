@@ -57,7 +57,8 @@ router.post('/login', (Request, Response) => {
                     type: "admin",
                     data: {
                         _id: admin._id,
-                        username:admin.username,                     name: Admin.name,
+                        username: admin.username,                     
+                        name: Admin.name,
                         email: admin.email,
                         contact: admin.contact,
                         job_profile: admin.job_profile
@@ -72,7 +73,7 @@ router.post('/login', (Request, Response) => {
                 });
             } else {
                 return Response.json({
-                    success: true,
+                    success: false,
                     message: "Parola gresita!"
                 });
             }

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-button (click)="signOut()">
+      <ion-button >
         <ion-icon name="log-out"></ion-icon>
       </ion-button>
     </ion-buttons> 
@@ -10,17 +10,17 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- <ion-content class="bg">
+<ion-content class="bg">
+  <form (submit)="logout()">
 
-
-  <ion-icon name="person"></ion-icon>
+  <!-- <ion-icon name="person"></ion-icon>
   <h1>Welcome,<br>
-  -Username here-</h1>
+  -Username here-</h1> -->
 
   <ion-grid>
     <ion-row>
       <ion-col size="6" >
-        <ion-card text-center padding >
+        <!-- <ion-card text-center padding >
           <ion-icon name="person"></ion-icon>
           <h2>Profil</h2>
         </ion-card>
@@ -44,10 +44,13 @@
         <ion-card text-center padding > 
           <ion-icon name="person"></ion-icon>
           <h2>Medicamente</h2>
-        </ion-card>
+        </ion-card> -->
+
+        <ion-button  expand="full" type="submit" >Logout</ion-button>
+
       </ion-col>
     </ion-row>
 
-  </ion-grid>
-
+  </ion-grid> -->
+</form>
 </ion-content> -->

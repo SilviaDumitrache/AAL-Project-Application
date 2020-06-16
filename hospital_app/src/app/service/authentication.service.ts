@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 
-
+//user
 export interface UserDetails {
   id: number
   name: string
@@ -21,11 +21,29 @@ export interface UserDetails {
   iat: number
 }
 
+//med
+export interface AdminDetails {
+  id: number
+  name: string
+  email: string
+  username: string
+  password: string
+  contact: string
+  job_profile:string
+  exp: number
+  iat: number
+}
+
 
 interface TokenResponse{
   token: string
 }
 
+interface AdminTokenResponse{
+  token: string
+}
+
+//user
 export interface TokenPayload {
   id: number
   name: string
@@ -33,8 +51,19 @@ export interface TokenPayload {
   username: string
   password: string
   contact: string
+  
 }
 
+//admin
+export interface AdminTokenPayload{
+  id: number
+  name: string
+  email: string
+  username: string
+  password: string
+  contact: string
+  job_profile: string
+}
 
 @Injectable({
   providedIn: 'root'
@@ -83,11 +112,34 @@ export class AuthenticationService {
     }
   }
 
+  public getAdminDetails(): AdminDetails {
+    const token = this.getToken()
+    let payload
+    if(token) {
+      payload = token.split('.')[1]
+      payload = window.atob(payload)
+      return JSON.parse(payload)
+    } else {
+      return null
+    }
+  }
+
   //verifica daca userul este logat
-  public isLoggedIn(): boolean {
+  public isUserLoggedIn(): boolean {
     const user = this.getUserDetails()
-    if (user) {
+  
+    if (user ) {
       return user.exp > Date.now()/1000
+    } else {
+      return false
+    }
+  }
+
+  //verifica daca adminul este logat
+  public isAdminLoggedIn(): boolean {
+    const admin = this.getAdminDetails()
+    if (admin) {
+      return admin.exp > Date.now()/1000
     } else {
       return false
     }
@@ -133,6 +185,29 @@ export class AuthenticationService {
     return request
   }
 
+  //login med
+  public loginMed( admin: AdminTokenPayload) : Observable<any> {
+    const base = this.http.post(`${environment.apiUrl}/admin/login`, admin)
+  
+
+    const request = base.pipe(
+      map(( data: AdminTokenResponse) => {
+        if (data.token) {
+          this.saveToken(data.token)
+        } else {
+          this.showToastAlert('Username-ul si parola nu se potrivesc.')
+        }
+        return data
+        
+      } 
+      )
+    )
+
+    // this.showToastAlert('Completati toate campurile si reincercati.');
+    return request
+  }
+
+
   //user profile
   public profile(): Observable<any> {
     return this.http.get(`${environment.apiUrl}/api/users/profile`, {
@@ -148,6 +223,13 @@ export class AuthenticationService {
     
   }
 
+  //delogare medic
+  public logoutMed(): void {
+    this.token=''
+    window.localStorage.removeItem('userToken')
+    this.router.navigateByUrl('/login-med')
+    
+  }
   
   showAlert(msg) {
     let alert = this.alertCtrl.create({
