@@ -71,6 +71,7 @@ export class LoginPage implements OnInit {
  
   onSubmit(){
 
+    
 //  login(){
     
     this.auth.login(this.credForm.value).subscribe(
@@ -91,4 +92,4 @@ export class LoginPage implements OnInit {
   // });
 }
  
-}
+// }
