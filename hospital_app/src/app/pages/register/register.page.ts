@@ -133,7 +133,7 @@ export class RegisterPage implements OnInit {
   async showToastAlert(msg){
     const toast = await this.toastCtrl.create({
       message: msg,
-      duration: 5000,
+      duration: 1000,
       position: "middle"
     });
     toast.present();
