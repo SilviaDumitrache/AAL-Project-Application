@@ -65,9 +65,9 @@ export class LoginPage implements OnInit {
   // }
 
 //funtia care ma duce pe pagina de resetare a parolei
-  goForgot(){
-    this.router.navigate(['pacient-prog'])
-  }
+  // goForgot(){
+  //   this.router.navigate(['pacient-prog'])
+  // }
  
   onSubmit(){
 
@@ -86,11 +86,12 @@ export class LoginPage implements OnInit {
   //}
 }  
 
-register(){
-  this.router.navigateByUrl('/register')
   // this.auth.register(this.credentials).subscribe(res => {
   //   this.auth.login(this.credForm.value).subscribe()
   // });
+
+register(){
+  this.router.navigateByUrl('/register')
 }
 
 logMed(){
