@@ -15,7 +15,6 @@ export interface UserDetails {
   name: string
   email: string
   username: string
-  // role: string
   password: string
   contact: string
   exp: number
@@ -31,7 +30,6 @@ export interface TokenPayload {
   id: number
   name: string
   email: string
-  // role: string
   username: string
   password: string
   contact: string
