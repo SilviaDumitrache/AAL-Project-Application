@@ -89,9 +89,6 @@ export class LoginPage implements OnInit {
   // this.auth.register(this.credentials).subscribe(res => {
   //   this.auth.login(this.credForm.value).subscribe()
   // });
-
-register(){
-  this.router.navigateByUrl('/register')
 }
  
 }
