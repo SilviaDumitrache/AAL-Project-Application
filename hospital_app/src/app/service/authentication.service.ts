@@ -150,6 +150,7 @@ export class AuthenticationService {
     
   }
 
+  
   showAlert(msg) {
     let alert = this.alertCtrl.create({
       message: msg,
@@ -168,5 +169,7 @@ export class AuthenticationService {
     });
     toast.present();
   }
+
+  
 
 }
