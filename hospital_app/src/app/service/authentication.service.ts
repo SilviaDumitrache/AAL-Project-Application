@@ -170,10 +170,11 @@ export class AuthenticationService {
 
     const request = base.pipe(
       map(( data: TokenResponse) => {
-        if (data.token) {
-          this.saveToken(data.token)
-        } else {
+        if (!data.token) {
           this.showToastAlert('Username-ul si parola nu se potrivesc.')
+        } else {
+          
+          this.saveToken(data.token)
         }
         return data
         
