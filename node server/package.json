@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js" 
+    "dev": "nodemon server.js"
   },
   "author": "Silvia D",
   "license": "ISC",
@@ -19,7 +19,8 @@
     "mongoose-unique-validator": "^2.0.3",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0"
+    "passport-jwt": "^4.0.0",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
