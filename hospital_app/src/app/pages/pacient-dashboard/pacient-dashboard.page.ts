@@ -37,6 +37,11 @@ export class PacientDashboardPage implements OnInit {
 
   goMed(){
     this.router.navigate(['medicamente']);
+
+  }
+
+  goChat(){
+    this.router.navigate(['chat']);
   }
 
   logout(){

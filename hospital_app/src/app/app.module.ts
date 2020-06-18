@@ -17,10 +17,14 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-
 import { AuthGuardService } from './service/auth-guard.service';
 import { AuthenticationService } from './service/authentication.service';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:3002', options: {} };
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,7 +34,8 @@ import { AuthenticationService } from './service/authentication.service';
   FormsModule,
   ReactiveFormsModule,
   HttpClientModule,
-  RouterModule //
+  RouterModule,
+  SocketIoModule.forRoot(config)
 
  
 ],

@@ -112,6 +112,8 @@ export class AuthenticationService {
     }
   }
 
+
+
   public getAdminDetails(): AdminDetails {
     const token = this.getToken()
     let payload
@@ -134,6 +136,8 @@ export class AuthenticationService {
       return false
     }
   }
+
+  
 
   //verifica daca adminul este logat
   public isAdminLoggedIn(): boolean {

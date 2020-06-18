@@ -88,4 +88,5 @@ router.get('/profile', passport.authenticate('jwt', {
     );
 })
 
+
 module.exports = router;

@@ -67,7 +67,11 @@ const routes: Routes = [
     path: 'medic-dashboard',
     loadChildren: () => import('./pages/medic-dashboard/medic-dashboard.module').then( m => m.MedicDashboardPageModule),
     canActivate: [AuthForAdminService]
+  },  {
+    path: 'chat',
+    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
   },
+
 
 
 ];

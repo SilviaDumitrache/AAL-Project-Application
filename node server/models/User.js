@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const uniqueValidator = require('mongoose-unique-validator');
 
+
 //Schema pt utilizator
 const UserSCH = mongoose.Schema({
     name: {
@@ -66,4 +67,9 @@ module.exports.comparePassword = function(password, hash, callback) {
         if (err) throw err;
         callback(null, isMatch);
     });
+
+
+       
+
+
 }
