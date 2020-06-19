@@ -23,4 +23,8 @@ export class MedicDashboardPage implements OnInit {
     this.auth.logoutMed();
   }
 
+  goPac(){
+    this.router.navigateByUrl('/pacienti')
+  }
+
 }

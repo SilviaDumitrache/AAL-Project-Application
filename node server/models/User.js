@@ -68,7 +68,10 @@ module.exports.comparePassword = function(password, hash, callback) {
         callback(null, isMatch);
     });
 
-
+// //get all users
+// module.exports.getAllUsers = function(Request, Response) {
+//     User.find({}, function)
+// }
        
 
 

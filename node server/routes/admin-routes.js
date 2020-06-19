@@ -5,6 +5,8 @@ const jwt = require('jsonwebtoken');
 const Admin = require('../models/Admin');
 const config = require('../config/database');
 
+const User = require('../models/User');
+
 //inregistrare utilizator nou
 router.post('/register', (Request, Response) => {
    let newAdmin = new Admin({
@@ -90,5 +92,7 @@ router.get('/profile', passport.authenticate('jwt', {
         Request.user
     );
 })
+
+
 
 module.exports = router;

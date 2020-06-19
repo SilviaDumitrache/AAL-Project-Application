@@ -88,5 +88,12 @@ router.get('/profile', passport.authenticate('jwt', {
     );
 })
 
+//lista tuturor utilizatorilor
+router.get('/all', function(Request, Response){
+    User.find({}, function(err, users){
+        Response.json(users);
+    });
+});
+
 
 module.exports = router;
