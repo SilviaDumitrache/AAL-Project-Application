@@ -20,11 +20,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService } from './service/auth-guard.service';
 import { AuthenticationService } from './service/authentication.service';
 
+
+
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 const config: SocketIoConfig = { url: 'http://localhost:3002', options: {} };
 
-
+import { Health } from '@ionic-native/health/ngx'
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +37,9 @@ const config: SocketIoConfig = { url: 'http://localhost:3002', options: {} };
   ReactiveFormsModule,
   HttpClientModule,
   RouterModule,
-  SocketIoModule.forRoot(config)
+  SocketIoModule.forRoot(config),
+  
+
 
  
 ],
@@ -44,6 +48,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3002', options: {} };
     AuthenticationService,
     StatusBar,
     SplashScreen,
+    Health,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

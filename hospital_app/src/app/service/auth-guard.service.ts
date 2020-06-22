@@ -14,12 +14,13 @@ export class AuthGuardService implements CanActivate {
 
   //verifica daca un user poate merge pe o pagina (ruta)
   canActivate() {
-    if(!this.auth.isUserLoggedIn) {
+    if(!this.auth.isUserLoggedIn()) {
       console.log('Neautorizat. Logare mai intai')
       // this.showAlert('Nu sunteti autorizat pe aceasta pagina')
-      this.router.navigateByUrl('/')
+      this.router.navigateByUrl('/login')
       return false
 
+       
     } 
     return true
   }

@@ -20,7 +20,7 @@ module.exports = (userType, passport) => {
                 return done(null, false); 
             });
         }
-        if (userType == 'user') {
+        if (userType == 'users') {
         User.getUserById(jwt_payload.data._id, (err, user)=> {
             if (err) return done(err, false); //user nu e autentificat
             if (user) return done (null, user); //user autentificat

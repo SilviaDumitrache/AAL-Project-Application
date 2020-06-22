@@ -75,6 +75,14 @@ const routes: Routes = [
     path: 'pacienti',
     loadChildren: () => import('./pages/pacienti/pacienti.module').then( m => m.PacientiPageModule)
   },
+  {
+    path: 'chat-med',
+    loadChildren: () => import('./pages/chat-med/chat-med.module').then( m => m.ChatMedPageModule)
+  },
+  {
+    path: 'smart-med',
+    loadChildren: () => import('./pages/smart-med/smart-med.module').then( m => m.SmartMedPageModule)
+  },
 
 
 

@@ -215,7 +215,7 @@ export class AuthenticationService {
 
   //user profile
   public profile(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/api/users/profile`, {
+    return this.http.get(`${environment.apiUrl}/users/profile`, {
       headers: { Authorization: `${this.getToken()}`}
     })
   }

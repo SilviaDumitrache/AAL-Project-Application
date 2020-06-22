@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {  AuthenticationService } from 'src/app/service/authentication.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-medic-dashboard',
   templateUrl: './medic-dashboard.page.html',
@@ -27,4 +28,7 @@ export class MedicDashboardPage implements OnInit {
     this.router.navigateByUrl('/pacienti')
   }
 
+  goChat(){
+    this.router.navigateByUrl('/chat-med')
+  }
 }

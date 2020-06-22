@@ -22,12 +22,13 @@ export class PacientProfilPage implements OnInit {
 
   ngOnInit() {
     this.auth.profile().subscribe(
-      user => {
+     user => {
         this.details = user
-      },
-      err => {
-        console.error(err)
-      }
+      // },
+      // err => {
+      //   console.error(err)
+      // }
+     }
     )
   }
 

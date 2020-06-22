@@ -21,27 +21,27 @@ ion-title{
     margin-bottom: 4px;
     white-space: pre-wrap;
   }
-   
+
   .my-message {
     // background: var(--ion-color-tertiary);
     color: whitesmoke;
     --color: blue;
     background: rgb(167, 108, 108);
-    
+
   }
-   
+
   .other-message {
     background: rgb(85, 85, 180);
     color:  whitesmoke;
     --color: blue;
   }
-   
+
   .time {
     color: #dfdfdf;
     float: right;
     font-size: small;
   }
-   
+
   .message-input {
     margin-top: 0px;
     border: 1px solid var(--ion-color-medium);
@@ -49,7 +49,7 @@ ion-title{
     background: #fff;
     --color: blue;
   }
-   
+
   .msg-btn {
     --padding-start: 0.5em;
     --padding-end: 0.5em;
