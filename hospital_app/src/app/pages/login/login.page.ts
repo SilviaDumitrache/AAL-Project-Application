@@ -69,11 +69,9 @@ export class LoginPage implements OnInit {
     this.router.navigate(['pacient-prog'])
   }
  
-  onSubmit(){
+  //onSubmit()
 
-    
-//  login(){
-    
+  login(){
     this.auth.login(this.credForm.value).subscribe(
       () => {
         this.router.navigateByUrl('/pacient-dashboard')
@@ -81,10 +79,7 @@ export class LoginPage implements OnInit {
       err => {
         console.error('Nu s-a facut login')
       }
-
     )
-    
-  //}
 }  
 
 register(){

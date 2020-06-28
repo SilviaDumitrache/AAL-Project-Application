@@ -72,6 +72,7 @@ export interface AdminTokenPayload{
 export class AuthenticationService {
   private token: string
   // public authState = new BehaviorSubject(null);
+  currentUser: TokenPayload;
 
   constructor(private http: HttpClient, 
               private router: Router,
@@ -99,7 +100,7 @@ export class AuthenticationService {
     return this.token
   }
 
-  //preia token-ul si returneaza JSON pe care il pot folosi oriunde in app
+  //preia token-ul si returneaza JSON 
   public getUserDetails(): UserDetails {
     const token = this.getToken()
     let payload
@@ -167,7 +168,7 @@ export class AuthenticationService {
     return request
   }
 
-  //login user
+  //autentificare user
   public login( user: TokenPayload) : Observable<any> {
     const base = this.http.post(`${environment.apiUrl}/users/login`, user)
   
@@ -190,7 +191,7 @@ export class AuthenticationService {
     return request
   }
 
-  //login med
+  //autentificare med
   public loginMed( admin: AdminTokenPayload) : Observable<any> {
     const base = this.http.post(`${environment.apiUrl}/admin/login`, admin)
   
@@ -234,6 +235,10 @@ export class AuthenticationService {
     window.localStorage.removeItem('userToken')
     this.router.navigateByUrl('/login-med')
     
+  }
+
+  getUserInf(): TokenPayload{
+    return this.currentUser;
   }
   
   showAlert(msg) {

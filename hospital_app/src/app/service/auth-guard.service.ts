@@ -16,11 +16,9 @@ export class AuthGuardService implements CanActivate {
   canActivate() {
     if(!this.auth.isUserLoggedIn()) {
       console.log('Neautorizat. Logare mai intai')
-      // this.showAlert('Nu sunteti autorizat pe aceasta pagina')
+      this.showAlert('Nu sunteti autorizat pe aceasta pagina')
       this.router.navigateByUrl('/login')
       return false
-
-       
     } 
     return true
   }

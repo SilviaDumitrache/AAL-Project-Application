@@ -8,11 +8,15 @@ import { SmartMedPageRoutingModule } from './smart-med-routing.module';
 
 import { SmartMedPage } from './smart-med.page';
 
+import { Health } from '@ionic-native/health/ngx';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    Health,
     SmartMedPageRoutingModule
   ],
   declarations: [SmartMedPage]

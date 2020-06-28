@@ -2,6 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Socket } from 'ngx-socket-io';
 import { ToastController } from '@ionic/angular';
+import {TokenPayload, AuthenticationService} from 'src/app/service/authentication.service'
+
+
+export interface User {
+  id: number
+  name: string
+  email: string
+  username: string
+  password: string
+  contact: string
+  
+}
 
 @Component({
   selector: 'app-chat-med',
@@ -10,6 +22,8 @@ import { ToastController } from '@ionic/angular';
 })
 export class ChatMedPage implements OnInit {
 
+  
+
   message = '';
   messages = [];
   currentUser = '';
@@ -17,14 +31,21 @@ export class ChatMedPage implements OnInit {
 
   constructor(private socket: Socket, 
               private toastCtrl: ToastController,
-              private router: Router) { }
+              private router: Router,
+              private auth: AuthenticationService) { }
 
   ngOnInit() {
     this.socket.connect();
   
-    let name = `${new Date().getTime()}`; //
+    let name = `${new Date().getTime()}`;
     // let name= '';
     this.currentUser = name;
+
+   if (this.auth.isUserLoggedIn() ) {
+     
+   }
+
+    
     
     this.socket.emit('set-name', name);
  

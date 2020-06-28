@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { AuthenticationService, UserDetails } from 'src/app/service/authentication.service'
+import { AuthenticationService, UserDetails } from 'src/app/service/authentication.service';
+
 
 @Component({
   selector: 'app-chat',
@@ -24,8 +25,6 @@ export class ChatPage implements OnInit {
 
     let name = `${new Date().getTime()}`;
   
-    // let name = '';
-
     this.currentUser = name;
 
     this.socket.emit('set-name', name);
@@ -65,6 +64,6 @@ export class ChatPage implements OnInit {
   }
 
   back(){
-    this.router.navigate[('pacient-dashboard')];
+    this.router.navigateByUrl('/pacient-dashboard')
   }
 }

@@ -10,21 +10,30 @@
 </ion-header> 
 
 <ion-content class="bg">
-  <div class="form-group">
-    <ion-label >Nume</ion-label>
-    <p > {{ details?.name }}</p>
-  </div>
+  <!-- <div class="form-group">
+    <!-- <ion-label >Nume</ion-label> -->
+    <!-- <ion-input> [(ngModel)]="details.name" }}</ion-input> -->
+  <!-- </div>  -->
+<!-- 
+  <div>Nume: <p [(ngModel)]="details.name" >  </p></div> -->
+  <!-- <div>Email: <p [(ngModel)]="details.email" >  </p></div>
+  <div>Contact: <p [(ngModel)]="details.contact" >  </p></div> -->
 
-  <div class="form-group">
+  <div>Nume: {{details.name}}</div>
+
+  <!-- <div>Contact: {{details.contact}}</div>
+  <div>Email: {{details.email}}</div> -->
+
+  <!-- <div class="form-group">
     <ion-label >Email</ion-label>
-    <p > {{ details?.email }}</p>
-  </div>
+    <p > [(ngModel)]="details.email" </p> 
+    </div>
 
   <div class="form-group">
     <ion-label >Contact</ion-label>
-    <p > {{ details?.contact }}</p>
+    <p > [(ngModel)]="details.contact" </p>
   </div>
-
+ -->
 
 
   <!-- <ion-item color="transparent" {{details.name}}>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService, UserDetails } from 'src/app/service/authentication.service';
+import { AuthenticationService, TokenPayload, UserDetails } from 'src/app/service/authentication.service';
 
 @Component({
   selector: 'app-pacient-profil',
@@ -9,10 +9,12 @@ import { AuthenticationService, UserDetails } from 'src/app/service/authenticati
 })
 export class PacientProfilPage implements OnInit {
   //contine detaliile utilizatorului logat
-  details: UserDetails
+  details: TokenPayload
 
   constructor(private router: Router , 
-              private auth: AuthenticationService) { }
+              private auth: AuthenticationService) {
+                
+               }
 
   //lista
   // sexes=[
@@ -20,19 +22,28 @@ export class PacientProfilPage implements OnInit {
   //   {name: 'M', isChecked: false},
   // ];
 
+  back(){
+    this.router.navigate(['pacient-dashboard']);
+  }
+
   ngOnInit() {
-    this.auth.profile().subscribe(
-     user => {
-        this.details = user
+    if( this.auth.isUserLoggedIn() ){
+      this.details = this.auth.getUserInf();
+    } else {
+    console.log('niciun user logat')
+    this.router.navigateByUrl('login'); }
+    }
+
+    // this.auth.profile().subscribe(
+    //  user => {
+    //     this.details = user
       // },
       // err => {
       //   console.error(err)
       // }
-     }
-    )
-  }
+    //  }
+    // )
+  // }
 
-  back(){
-    this.router.navigate(['pacient-dashboard']);
-  }
+  
 }
