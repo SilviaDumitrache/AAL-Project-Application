@@ -10,16 +10,18 @@
 </ion-header> 
 
 <ion-content class="bg">
-  <!-- <div class="form-group">
-    <!-- <ion-label >Nume</ion-label> -->
-    <!-- <ion-input> [(ngModel)]="details.name" }}</ion-input> -->
-  <!-- </div>  -->
+  <div class="form-group">
+    <ion-label >Nume</ion-label>
+    <ion-input type="text" (ngModel)="user.name"></ion-input>
+
+    <!-- <ion-input type=“text” [(ngModel)]=“activeField.name” inputmode=“text”></ion-input> -->
+  </div> 
 <!-- 
   <div>Nume: <p [(ngModel)]="details.name" >  </p></div> -->
   <!-- <div>Email: <p [(ngModel)]="details.email" >  </p></div>
   <div>Contact: <p [(ngModel)]="details.contact" >  </p></div> -->
 
-  <div>Nume: {{details.name}}</div>
+  <!-- <div>Nume: {{details.name}}</div> -->
 
   <!-- <div>Contact: {{details.contact}}</div>
   <div>Email: {{details.email}}</div> -->

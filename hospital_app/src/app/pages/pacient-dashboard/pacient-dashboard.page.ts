@@ -24,7 +24,7 @@ export class PacientDashboardPage implements OnInit {
  
 
   goProgramare(){
-    this.router.navigate(['pacient-prog']);
+    this.router.navigateByUrl('/pacient-prog');
   }
 
   goProfil(){
@@ -42,6 +42,11 @@ export class PacientDashboardPage implements OnInit {
 
   goChat(){
     this.router.navigate(['chat']);
+  }
+
+
+  goSmartMed(){
+    this.router.navigateByUrl('/smart-med')
   }
 
   logout(){

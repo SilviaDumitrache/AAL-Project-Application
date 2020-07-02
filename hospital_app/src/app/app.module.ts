@@ -24,7 +24,8 @@ import { AuthenticationService } from './service/authentication.service';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
-const config: SocketIoConfig = { url: 'http://localhost:3002', options: {} };
+// const config: SocketIoConfig = { url: 'http://localhost:3002', options: {} };
+const config: SocketIoConfig = { url: 'http://192.168.1.5:3002', options: {} };
 
 import { Health } from '@ionic-native/health/ngx'
 

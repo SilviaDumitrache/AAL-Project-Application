@@ -72,6 +72,9 @@ const admin = require('./routes/admin-routes');
 app.use('/api/admin', admin);
 
 
-app.listen(PORT, () => {
-    console.log(`Serverul a pornit pe portul ${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Serverul a pornit pe portul ${PORT}`);
+// });
+
+
+app.listen(PORT, '0.0.0.0');

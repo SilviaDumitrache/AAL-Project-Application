@@ -78,9 +78,7 @@ export class LoginPage implements OnInit {
       },
       err => {
         console.error('Nu s-a facut login')
-      }
-    )
-}  
+      })}  
 
 register(){
   this.router.navigateByUrl('/register')

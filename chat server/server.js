@@ -20,6 +20,7 @@ io.on('connection', (socket) => {
 
 var port = process.env.PORT || 3002;
 
-server.listen(port, function(){
-   console.log('listening in http://localhost:' + port);
-}); 
+// server.listen(port, function(){
+//    console.log('listening in http://localhost:' + port);
+// }); 
+server.listen(port, '0.0.0.0');

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpHeaderResponse } from '@angular/common/http';
 import { Observable, of, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router, Routes } from '@angular/router';
@@ -233,8 +233,7 @@ export class AuthenticationService {
   public logoutMed(): void {
     this.token=''
     window.localStorage.removeItem('userToken')
-    this.router.navigateByUrl('/login-med')
-    
+    this.router.navigateByUrl('/login-med') 
   }
 
   getUserInf(): TokenPayload{
