@@ -19,9 +19,9 @@
     "ngx-socket-io": "^3.0.1"
   },
   "devDependencies": {
-    "@angular/cli": "13.3.4",
-    "@angular-devkit/schematics": "0.2.0",
-    "@angular-devkit/core": "^0.2.0"
+    "@angular/cli": "13.3.5",
+    "@angular-devkit/schematics": "13.3.5",
+    "@angular-devkit/core": "^13.3.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
