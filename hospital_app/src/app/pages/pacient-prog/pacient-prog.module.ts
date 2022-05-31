@@ -8,15 +8,15 @@ import { PacientProgPageRoutingModule } from './pacient-prog-routing.module';
 
 import { PacientProgPage } from './pacient-prog.page';
 
-import { NgCalendarModule } from 'ionic2-calendar';
+// import { NgCalendarModule } from 'ionic2-calendar';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PacientProgPageRoutingModule,
-    NgCalendarModule
+    PacientProgPageRoutingModule
+    // NgCalendarModule
   ],
   declarations: [PacientProgPage]
 })
